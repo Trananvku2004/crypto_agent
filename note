@@ -1,0 +1,57 @@
+# Train
+python main.py train
+
+# Backtest tổng quan
+python main.py backtest
+
+# Đánh giá chi tiết
+python main.py evaluate
+
+# Mô phỏng 20 lệnh — xem từng lệnh
+python main.py simulate --trades 20
+
+# Mô phỏng 50 lệnh
+python main.py simulate --trades 50
+
+# Nếu kết quả OK → realtime
+python main.py run
+# 1. Kích hoạt venv (BẮT BUỘC mỗi lần mở)
+venv\Scripts\activate
+
+# 2. Kiểm tra kết nối
+python main.py test-data
+
+# 3. Chạy hệ thống
+python main.py run
+ python main.py download --days 
+ # 1. Kích hoạt venv
+venv\Scripts\activate
+
+# 2. Test kết nối
+python main.py test-data
+
+# 3. Chạy toàn bộ (trading + bot + dashboard)
+python main.py run
+
+# Hoặc riêng lẻ:
+python main.py train      # Train model
+python main.py simulate   # Test 20 lệnh
+python main.py dashboard  # Chỉ web
+python main.py bot        # Chỉ telegram
+new 
+# 1. Xóa model cũ (reward function thay đổi)
+del models\best_model.zip
+del models\stage1_model.zip
+
+# 2. Train lại với env mới
+python main.py train
+
+# 3. Simulate kiểm tra
+python main.py simulate --trades 30
+
+# 4. Chạy hệ thống
+python main.py run
+chạy chính
+ python main.py trade
+ python main.py dashboard
+ python main.py bot
